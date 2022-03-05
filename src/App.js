@@ -1,22 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./App.css";
+import Clock from "./Clock";
+import Clock1 from "./Clock1";
+import Lifecycle from "./Lifecycle";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <React.StrictMode>
+          <React.Fragment>
+            <div>
+              <h1>Hello ,World!</h1>
+              <h1>It is:{new Date().toLocaleTimeString()}</h1>
+            </div>
+            <Clock date={new Date()}></Clock>
+            <Clock1 date={new Date()}></Clock1>
+            <Lifecycle></Lifecycle>
+          </React.Fragment>
+        </React.StrictMode>
       </header>
     </div>
   );
